@@ -1,8 +1,5 @@
 # An integration to get weather alerts from weather.gov
 
-[![GitHub release (latest by date)][release-badge]][release-link]  [![GitHub][license-badge]][license-link]  [![hacs_badge][hacs-badge]][hacs-link]
-
-[![GitHub stars][stars-badge]][stars-link]  ![GitHub][maintained-badge]  [![GitHub issues][issues-badge]][issues-link]  [![GitHub commits since latest release (by SemVer)][commits-badge]][commits-link]
 
 # This is a placeholder until I figure out how to update the developers original code #
 # Breaking changes
