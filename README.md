@@ -13,7 +13,7 @@
 
 # Installation Quickstart
 
-This qickstart install guide assumes you are already familiar with custom component installation and with the Home Assistant YAML configuration. If you need more detailed step-by-step instructions, check the links at the bottom for detailed instructions. Troubleshooting information, weatheralerts YAML package information, and Lovelace UI examples are also included in the **Links** at the bottom.
+This quickstart install guide assumes you are already familiar with custom component installation and with the Home Assistant YAML configuration. If you need more detailed step-by-step instructions, check the links at the bottom for detailed instructions. Troubleshooting information, weatheralerts YAML package information, and Lovelace UI examples are also included in the **Links** at the bottom.
 
 Install the *weatheralerts* integration via *HACS*. After installing via *HACS*, don't restart Home Assistant yet. We will do that after completing the YAML platform configuration.
 
