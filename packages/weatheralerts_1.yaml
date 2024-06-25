@@ -36,7 +36,76 @@ sensor:
               {% endfor %}
             {% endif %}
             {{ watches.count }}
-          # ... (include all other attribute_templates from the original code)
+          advisory_count: >-
+            {% set advisories = namespace(count=0) %}
+            {% if (state_attr('sensor.weatheralerts_1', 'alerts')) %}
+              {% for alert in state_attr('sensor.weatheralerts_1', 'alerts') %}
+                {% if 'advisory' in alert.event.lower() and (as_timestamp(alert['endsExpires']) - as_timestamp(now()) > 0) %}
+                  {% set advisories.count = advisories.count + 1 %} 
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+            {{ advisories.count }}
+          statement_count: >-
+            {% set statements = namespace(count=0) %}
+            {% if (state_attr('sensor.weatheralerts_1', 'alerts')) %}
+              {% for alert in state_attr('sensor.weatheralerts_1', 'alerts') %}
+                {% if 'statement' in alert.event.lower() and (as_timestamp(alert['endsExpires']) - as_timestamp(now()) > 0) %}
+                  {% set statements.count = statements.count + 1 %} 
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+            {{ statements.count }}
+          outlook_count: >-
+            {% set outlooks = namespace(count=0) %}
+            {% if (state_attr('sensor.weatheralerts_1', 'alerts')) %}
+              {% for alert in state_attr('sensor.weatheralerts_1', 'alerts') %}
+                {% if 'outlook' in alert.event.lower() and (as_timestamp(alert['endsExpires']) - as_timestamp(now()) > 0) %}
+                  {% set outlooks.count = outlooks.count + 1 %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+            {{ outlooks.count }}
+          alert_count: >-
+            {% set alerts = namespace(count=0) %}
+            {% if (state_attr('sensor.weatheralerts_1', 'alerts')) %}
+              {% for alert in state_attr('sensor.weatheralerts_1', 'alerts') %}
+                {% if 'alert' in alert.event.lower() and (as_timestamp(alert['endsExpires']) - as_timestamp(now()) > 0) %}
+                  {% set alerts.count = alerts.count + 1 %} 
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+            {{ alerts.count }}
+          message_count: >-
+            {% set messages = namespace(count=0) %}
+            {% if (state_attr('sensor.weatheralerts_1', 'alerts')) %}
+              {% for alert in state_attr('sensor.weatheralerts_1', 'alerts') %}
+                {% if 'message' in alert.event.lower() and (as_timestamp(alert['endsExpires']) - as_timestamp(now()) > 0) %}
+                  {% set messages.count = messages.count + 1 %} 
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+            {{ messages.count }}
+          important_count: >-
+            {% set important = namespace(count=0) %}
+            {% if (state_attr('sensor.weatheralerts_1', 'alerts')) %}
+              {% for alert in state_attr('sensor.weatheralerts_1', 'alerts') %}
+                {% if ('emergency' in alert.event.lower() or 'danger' in alert.event.lower() or 'immediate' in alert.event.lower()) and (as_timestamp(alert['endsExpires']) - as_timestamp(now()) > 0) %}
+                  {% set important.count = important.count + 1 %} 
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+            {{ important.count }}
+          test_count: >-
+            {% set test = namespace(count=0) %}
+            {% if (state_attr('sensor.weatheralerts_1', 'alerts')) %}
+              {% for alert in state_attr('sensor.weatheralerts_1', 'alerts') %}
+                {% if 'Test' in alert.event and (as_timestamp(alert['endsExpires']) - as_timestamp(now()) > 0) %}
+                  {% set test.count = test.count + 1 %} 
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+            {{ test.count }}
 
       weatheralerts_1_alert_1:
         friendly_name: Weather Alert 1
