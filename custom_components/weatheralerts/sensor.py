@@ -10,6 +10,7 @@ from homeassistant.components.sensor import SensorEntity
 from homeassistant.const import CONF_NAME, __version__
 from homeassistant.helpers.aiohttp_client import async_create_clientsession
 from homeassistant.exceptions import PlatformNotReady
+from homeassistant.const import __version__
 
 __version__ = '0.1.5'
 
