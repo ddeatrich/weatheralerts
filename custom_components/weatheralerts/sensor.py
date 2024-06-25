@@ -1,4 +1,5 @@
 """Support for NWS weather alerts."""
+import sys
 import logging
 import asyncio
 from datetime import timedelta
