@@ -54,7 +54,7 @@ async def validate_zone(state, zone_config):
     if len(state) != 2:
         raise ValueError(f"Configured state '{state}' is not valid")
     
-    zone = zone_config.zfill(3)
+    zone = str(zone_config).zfill(3)
     if len(zone) != 3:
         raise ValueError(f"Configured zone ID '{zone_config}' is not valid")
     
@@ -64,7 +64,7 @@ async def validate_county(state, county_config):
     if not county_config:
         return ''
     
-    county = county_config.zfill(3)
+    county = str(county_config).zfill(3)
     if len(county) != 3:
         raise ValueError(f"Configured county ID '{county_config}' is not valid")
     
