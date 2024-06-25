@@ -1,6 +1,43 @@
 sensor:
   - platform: template
     sensors:
+      weatheralerts_1_active_alerts:
+        friendly_name: Weather Alerts
+        unit_of_measurement: Alerts
+        icon_template: mdi:alert-rhombus
+        value_template: >-
+          {% set alerts_total = namespace(count=0) %}
+          {% if (state_attr('sensor.weatheralerts_1', 'alerts')) %}
+            {% for alert in state_attr('sensor.weatheralerts_1', 'alerts') %}
+              {% if as_timestamp(alert['endsExpires']) - as_timestamp(now()) > 0 %}
+                {% set alerts_total.count = alerts_total.count + 1 %} 
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {{ alerts_total.count }}
+        attribute_templates:
+          warning_count: >-
+            {% set warnings = namespace(count=0) %}
+            {% if (state_attr('sensor.weatheralerts_1', 'alerts')) %}
+              {% for alert in state_attr('sensor.weatheralerts_1', 'alerts') %}
+                {% if 'warning' in alert.event.lower() and (as_timestamp(alert['endsExpires']) - as_timestamp(now()) > 0) %}
+                  {% set warnings.count = warnings.count + 1 %} 
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+            {{ warnings.count }}
+          watch_count: >-
+            {% set watches = namespace(count=0) %}
+            {% if (state_attr('sensor.weatheralerts_1', 'alerts')) %}
+              {% for alert in state_attr('sensor.weatheralerts_1', 'alerts') %}
+                {% if 'watch' in alert.event.lower() and (as_timestamp(alert['endsExpires']) - as_timestamp(now()) > 0) %}
+                  {% set watches.count = watches.count + 1 %} 
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+            {{ watches.count }}
+          # ... (include all other attribute_templates from the original code)
+
       weatheralerts_1_alert_1:
         friendly_name: Weather Alert 1
         icon_template: >-
