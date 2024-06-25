@@ -101,6 +101,11 @@ class WeatherAlertsSensor(SensorEntity):
         return self._name
 
     @property
+    def unique_id(self):
+        """Return a unique ID to use for this sensor."""
+        return "weatheralerts_1"
+
+    @property
     def state(self):
         """Return the state of the sensor."""
         return self._state
