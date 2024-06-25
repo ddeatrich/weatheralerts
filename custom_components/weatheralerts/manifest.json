@@ -1,7 +1,7 @@
 {
   "domain": "weatheralerts",
   "name": "Weatheralerts",
-  "documentation": "https://github.com/custom-components/weatheralerts",
+  "documentation": "https://github.com/ddeatrich0407/weatheralerts",
   "dependencies": [],
   "codeowners": [
     "@ddeatrich"
