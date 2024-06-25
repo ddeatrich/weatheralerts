@@ -11,6 +11,8 @@ from homeassistant.const import CONF_NAME, __version__
 from homeassistant.helpers.aiohttp_client import async_create_clientsession
 from homeassistant.exceptions import PlatformNotReady
 
+__version__ = '0.1.5'
+
 _LOGGER = logging.getLogger(__name__)
 
 CONF_STATE = "state"
