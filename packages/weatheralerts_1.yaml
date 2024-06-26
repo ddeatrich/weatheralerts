@@ -1743,3 +1743,110 @@ sensor:
           {% else %}
             No
           {% endif %}
+
+input_text:
+  weatheralerts_1_triggered_ui_alert_ids:
+    name: Triggered Weather Alert IDs - UI
+    icon: mdi:information-variant
+    max: 255
+    initial: None
+
+
+automation:
+  - alias: Weather Alert UI Notification - 1
+    initial_state: true
+    trigger:
+      - platform: state
+        entity_id: sensor.weatheralerts_1_alert_1_last_changed
+      - platform: homeassistant
+        event: start
+    condition:
+      - condition: and
+        conditions:
+          - condition: template
+            value_template: "{{ states('sensor.weatheralerts_1_alerts_are_active') == 'Yes' }}"
+          - condition: template
+            value_template: "{{ (as_timestamp(now()) - as_timestamp(state_attr('sensor.weatheralerts_1_alert_1', 'alert_sent'))) < 3600 }}"
+          - condition: template
+            value_template: "{{ state_attr('sensor.weatheralerts_1_alert_1', 'alert_id') not in states('input_text.weatheralerts_1_triggered_ui_alert_ids') }}"
+    action:
+      - service: script.weatheralerts_1_popup_on_wx_alert
+        data_template:
+          title: >
+            {% if (states('sensor.weatheralerts_1_alert_1') == 'on') and ((as_timestamp(now()) - as_timestamp(state_attr('sensor.weatheralerts_1_alert_1', 'alert_effective'))|float) <= 3600) %}
+              {{ state_attr('sensor.weatheralerts_1_alert_1', 'display_title') }}
+            {% else %}
+              Weather Alerts
+            {% endif %}
+          message: >
+            {% if (states('sensor.weatheralerts_1_alert_1') == 'on') and ((as_timestamp(now()) - as_timestamp(state_attr('sensor.weatheralerts_1_alert_1', 'alert_effective'))|float) <= 3600) %}
+              {{ state_attr('sensor.weatheralerts_1_alert_1', 'display_message') }}
+            {% endif %}
+            {% if (states('sensor.weatheralerts_1_alert_1') == 'on') and ((as_timestamp(now()) - as_timestamp(state_attr('sensor.weatheralerts_1_alert_1', 'alert_effective'))|float) > 3600) %}
+              <hr>Alert: <br>{{ state_attr('sensor.weatheralerts_1_alert_1', 'display_title') }}
+            {% endif %}
+            {% if (states('sensor.weatheralerts_1_alert_2') == 'on') and ((as_timestamp(now()) - as_timestamp(state_attr('sensor.weatheralerts_1_alert_2', 'alert_effective'))|float) <= 3600) %}
+              <hr>{{ state_attr('sensor.weatheralerts_1_alert_2', 'display_title') }}<br>
+              {{ state_attr('sensor.weatheralerts_1_alert_2', 'display_message') }}
+            {% endif %}
+            {% if (states('sensor.weatheralerts_1_alert_2') == 'on') and ((as_timestamp(now()) - as_timestamp(state_attr('sensor.weatheralerts_1_alert_2', 'alert_effective'))|float) > 3600) %}
+              <hr>Alert: <br>{{ state_attr('sensor.weatheralerts_1_alert_2', 'display_title') }}
+            {% endif %}
+            {% if (states('sensor.weatheralerts_1_alert_3') == 'on') and ((as_timestamp(now()) - as_timestamp(state_attr('sensor.weatheralerts_1_alert_3', 'alert_effective'))|float) <= 3600) %}
+              <hr>{{ state_attr('sensor.weatheralerts_1_alert_3', 'display_title') }}<br>
+              {{ state_attr('sensor.weatheralerts_1_alert_3', 'display_message') }}
+            {% endif %}
+            {% if (states('sensor.weatheralerts_1_alert_3') == 'on') and ((as_timestamp(now()) - as_timestamp(state_attr('sensor.weatheralerts_1_alert_3', 'alert_effective'))|float) > 3600) %}
+              <hr>Alert: <br>{{ state_attr('sensor.weatheralerts_1_alert_3', 'display_title') }}
+            {% endif %}
+            {% if (states('sensor.weatheralerts_1_alert_4') == 'on') and ((as_timestamp(now()) - as_timestamp(state_attr('sensor.weatheralerts_1_alert_4', 'alert_effective'))|float) <= 3600) %}
+              <hr>{{ state_attr('sensor.weatheralerts_1_alert_4', 'display_title') }}<br>
+              {{ state_attr('sensor.weatheralerts_1_alert_4', 'display_message') }}
+            {% endif %}
+            {% if (states('sensor.weatheralerts_1_alert_4') == 'on') and ((as_timestamp(now()) - as_timestamp(state_attr('sensor.weatheralerts_1_alert_4', 'alert_effective'))|float) > 3600) %}
+              <hr>Alert: <br>{{ state_attr('sensor.weatheralerts_1_alert_4', 'display_title') }}
+            {% endif %}
+            {% if (states('sensor.weatheralerts_1_alert_5') == 'on') and ((as_timestamp(now()) - as_timestamp(state_attr('sensor.weatheralerts_1_alert_5', 'alert_effective'))|float) <= 3600) %}
+              <hr>{{ state_attr('sensor.weatheralerts_1_alert_5', 'display_title') }}<br>
+              {{ state_attr('sensor.weatheralerts_1_alert_5', 'display_message') }}
+            {% endif %}
+            {% if (states('sensor.weatheralerts_1_alert_5') == 'on') and ((as_timestamp(now()) - as_timestamp(state_attr('sensor.weatheralerts_1_alert_5', 'alert_effective'))|float) > 3600) %}
+              <hr>Alert: <br>{{ state_attr('sensor.weatheralerts_1_alert_5', 'display_title') }}
+            {% endif %}
+      - service: input_text.set_value
+        data_template:
+          entity_id: input_text.weatheralerts_1_triggered_ui_alert_ids
+          value: "{{ state_attr('sensor.weatheralerts_1_alert_1', 'alert_id') }} {{ state_attr('sensor.weatheralerts_1_alert_2', 'alert_id') }} {{ state_attr('sensor.weatheralerts_1_alert_3', 'alert_id') }} {{ state_attr('sensor.weatheralerts_1_alert_4', 'alert_id') }} {{ state_attr('sensor.weatheralerts_1_alert_5', 'alert_id') }}"
+
+  - alias: Weather Alert UI Notification Auto-dismiss - 1
+    trigger:
+      - platform: state
+        entity_id: sensor.weatheralerts_1_alerts_are_active
+        to: "No"
+        for:
+          minutes: 30
+      - platform: homeassistant
+        event: start
+    condition:
+      - condition: template
+        value_template: "{{ states('sensor.weatheralerts_1_alerts_are_active') == 'No' }}"
+    action:
+      - service: persistent_notification.dismiss
+        data:
+          notification_id: "weatheralerts_1_alert"
+
+script:
+  weatheralerts_1_popup_on_wx_alert:
+    alias: Weather Alert Pop Up - 1
+    sequence:
+      - service: persistent_notification.dismiss
+        data:
+          notification_id: "weatheralerts_1_alert"
+      - service: >
+          {% if states.sensor.weatheralerts_1.state != '0' %}
+            persistent_notification.create
+          {% endif %}
+        data_template:
+          notification_id: "weatheralerts_1_alert"
+          message: "{{ message }}"
+          title: "{{ title }}"
