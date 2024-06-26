@@ -21,7 +21,7 @@ CONF_STATE = "state"
 CONF_ZONE = "zone"
 CONF_COUNTY = "county"
 
-DEFAULT_NAME = "NWS Alerts"
+DEFAULT_NAME = "weatheralerts_1"  # Changed to the desired sensor name
 DEFAULT_ICON = "mdi:alert"
 
 SCAN_INTERVAL = timedelta(minutes=1)
