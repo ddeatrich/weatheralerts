@@ -107,7 +107,7 @@ sensor:
             {% endif %}
             {{ test.count }}
 
-weatheralerts_1_alert_1:
+      weatheralerts_1_alert_1:
         friendly_name: Weather Alert 1
         icon_template: >-
           {% set mapper =  {
@@ -515,7 +515,7 @@ weatheralerts_1_alert_1:
               None
             {% endif %}
 
-weatheralerts_1_alert_2:
+      weatheralerts_1_alert_2:
         friendly_name: Weather Alert 2
         icon_template: >-
           {% set mapper =  {
@@ -922,7 +922,7 @@ weatheralerts_1_alert_2:
               None
             {% endif %}
 
-weatheralerts_1_alert_3:
+      weatheralerts_1_alert_3:
         friendly_name: Weather Alert 3
         icon_template: >-
           {% set mapper =  {
@@ -1329,7 +1329,7 @@ weatheralerts_1_alert_3:
               None
             {% endif %}
 
-weatheralerts_1_alert_4:
+      weatheralerts_1_alert_4:
         friendly_name: Weather Alert 4
         icon_template: >-
           {% set mapper =  {
@@ -1736,7 +1736,7 @@ weatheralerts_1_alert_4:
               None
             {% endif %}
 
-weatheralerts_1_alert_5:
+      weatheralerts_1_alert_5:
         friendly_name: Weather Alert 5
         icon_template: >-
           {% set mapper =  {
@@ -2143,7 +2143,7 @@ weatheralerts_1_alert_5:
               None
             {% endif %}
 
-weatheralerts_1_alert_1_last_changed:
+      weatheralerts_1_alert_1_last_changed:
         value_template: >-
           {% if states('sensor.weatheralerts_1_alert_1') == "on" %}
             {{ states.sensor.weatheralerts_1_alert_1.last_updated }}
@@ -2151,7 +2151,7 @@ weatheralerts_1_alert_1_last_changed:
             None
           {% endif %}
 
-weatheralerts_1_alert_2_last_changed:
+      weatheralerts_1_alert_2_last_changed:
         value_template: >-
           {% if states('sensor.weatheralerts_1_alert_2') == "on" %}
             {{ states.sensor.weatheralerts_1_alert_2.last_updated }}
@@ -2159,7 +2159,7 @@ weatheralerts_1_alert_2_last_changed:
             None
           {% endif %}
 
-weatheralerts_1_alert_3_last_changed:
+      weatheralerts_1_alert_3_last_changed:
         value_template: >-
           {% if states('sensor.weatheralerts_1_alert_3') == "on" %}
             {{ states.sensor.weatheralerts_1_alert_3.last_updated }}
@@ -2167,7 +2167,7 @@ weatheralerts_1_alert_3_last_changed:
             None
           {% endif %}
 
-weatheralerts_1_alert_4_last_changed:
+      weatheralerts_1_alert_4_last_changed:
         value_template: >-
           {% if states('sensor.weatheralerts_1_alert_4') == "on" %}
             {{ states.sensor.weatheralerts_1_alert_4.last_updated }}
@@ -2175,7 +2175,7 @@ weatheralerts_1_alert_4_last_changed:
             None
           {% endif %}
 
-weatheralerts_1_alert_5_last_changed:
+      weatheralerts_1_alert_5_last_changed:
         value_template: >-
           {% if states('sensor.weatheralerts_1_alert_5') == "on" %}
             {{ states.sensor.weatheralerts_1_alert_5.last_updated }}
@@ -2183,7 +2183,7 @@ weatheralerts_1_alert_5_last_changed:
             None
           {% endif %}
 
-weatheralerts_1_alerts_are_active:
+      weatheralerts_1_alerts_are_active:
         friendly_name: Weather Alerts Are Active
         icon_template: mdi:alert-rhombus
         value_template: >
