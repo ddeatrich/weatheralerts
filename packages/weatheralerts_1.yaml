@@ -106,7 +106,7 @@ sensor:
               {% endfor %}
             {% endif %}
             {{ test.count }}
-			
+	    
 weatheralerts_1_alert_1:
         friendly_name: Weather Alert 1
         icon_template: >-
