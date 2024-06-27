@@ -54,10 +54,8 @@ Check the **Breaking Changes** section of this README to see if you need to manu
 
 # Todo list
 - [x] Add more documentation
-- [ ] Add config flow to allow UI-based configuration (eliminate yaml-based platform configuration)
-- [ ] Create alternative (possibly simpler) YAML package or move some template sensors into the integration
-- [ ] Add backup weather alert source for occasions when weather.gov json feed is experiencing an outage
-- [ ] Add Canadian weather alerts
+- [x] Update code to meet current best practice, clean up code, performance improvements
+- [ ] Add backup weather alert source for occasions when weather.gov json feed is experiencing an outage - I can't find any good free ones yet.
 
 
 [release-badge]: https://img.shields.io/github/v/release/custom-components/weatheralerts?style=plastic
@@ -67,9 +65,6 @@ Check the **Breaking Changes** section of this README to see if you need to manu
 [hacs-badge]: https://img.shields.io/badge/HACS-Default-orange.svg?style=plastic
 [hacs-link]: https://github.com/hacs/integration
 [stars-badge]: https://img.shields.io/github/stars/custom-components/weatheralerts?style=plastic
-[stars-link]: https://github.com/custom-components/weatheralerts/stargazers
+[stars-link]: https://github.com/ddeatrich0407/weatheralerts/stargazers
 [maintained-badge]: https://img.shields.io/badge/maintenance%20status-actively%20developed-brightgreen
-[issues-badge]: https://img.shields.io/github/issues/custom-components/weatheralerts?style=plastic
-[issues-link]: https://github.com/custom-components/weatheralerts/issues
-[commits-badge]: https://img.shields.io/github/commits-since/custom-components/weatheralerts/latest?style=plastic
-[commits-link]: https://github.com/custom-components/weatheralerts/commits/master
+
