@@ -1893,7 +1893,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].id }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('id', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -1902,7 +1902,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].event }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('event', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -1911,7 +1911,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].area }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('area', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -1920,7 +1920,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].NWSheadline | regex_replace('\[\'','') | regex_replace('\'\]','') }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('NWSheadline', 'N/A') | regex_replace('\[\'','') | regex_replace('\'\]','') }}
             {% else %}
               None
             {% endif %}
@@ -1929,7 +1929,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].description }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('description', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -1938,7 +1938,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].instruction }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('instruction', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -1947,7 +1947,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].response }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('response', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -1956,7 +1956,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].sent }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('sent', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -1965,7 +1965,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].effective }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('effective', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -1974,7 +1974,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].onset }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('onset', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -1983,7 +1983,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].expires }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('expires', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -1992,7 +1992,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].ends }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('ends', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -2001,7 +2001,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].category }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('category', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -2010,7 +2010,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].severity }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('severity', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -2019,7 +2019,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].certainty }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('certainty', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -2028,7 +2028,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].urgency }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('urgency', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -2037,7 +2037,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].sender }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('sender', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -2046,7 +2046,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].senderName }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('senderName', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -2055,7 +2055,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].messageType }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('messageType', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -2064,7 +2064,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].status }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('status', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -2073,7 +2073,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].title }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('title', 'N/A') }}
             {% else %}
               None
             {% endif %}
@@ -2082,7 +2082,7 @@ weatheralerts_1_alert_5:
                and not is_state('sensor.weatheralerts_1', 'unknown') 
                and state_attr('sensor.weatheralerts_1', 'alerts') is not none
                and state_attr('sensor.weatheralerts_1', 'alerts')|length > 4 %}
-              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].zoneid }}
+              {{ state_attr('sensor.weatheralerts_1', 'alerts')[4].get('zoneid', 'N/A') }}
             {% else %}
               None
             {% endif %}
