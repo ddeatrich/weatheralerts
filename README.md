@@ -7,8 +7,7 @@
 
 # Breaking changes
 
-### v0.1.2
- * The [YAML packages](https://github.com/custom-components/weatheralerts/blob/master/documentation/YAML_PACKAGES_DOCS.md) currently available for *weatheralerts v0.1.2* are not compatible with prior versions of *weatheralerts*. Older YAML packages should still work with *weatheralerts v0.1.2*, however, the most recent YAML package files contain new features and fixes.
+### None discovered yet
 
 
 # Installation Quickstart
