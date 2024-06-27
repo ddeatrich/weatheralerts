@@ -62,7 +62,7 @@ Check the **Breaking Changes** section of this README to see if you need to manu
 
 
 [release-badge]: https://img.shields.io/github/v/release/custom-components/weatheralerts?style=plastic
-[release-link]: https://github.com/custom-components/weatheralerts/releases
+[release-link]: https://github.com/ddeatrich0407/weatheralerts
 [license-badge]: https://img.shields.io/github/license/custom-components/weatheralerts?style=plastic
 [license-link]: https://github.com/custom-components/weatheralerts/blob/master/LICENSE
 [hacs-badge]: https://img.shields.io/badge/HACS-Default-orange.svg?style=plastic
