@@ -1,4 +1,5 @@
-# An integration to get weather alerts from weather.gov
+# An integration for weather alerts from weather.gov
+This can be used as a severe weather automation system
 
 [![GitHub release (latest by date)][release-badge]][release-link]  [![GitHub][license-badge]][license-link]  [![hacs_badge][hacs-badge]][hacs-link]
 
