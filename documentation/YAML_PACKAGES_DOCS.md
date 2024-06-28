@@ -6,9 +6,9 @@ Note: Don't forget to *Star* or *Watch* the *weatheralerts* GitHub repository so
   * [Troubleshooting](TROUBLESHOOTING.md)
   * **YAML Package Info**
   * [Lovelace UI Examples](LOVELACE_EXAMPLES.md)
-  * [GitHub Repository](https://github.com/custom-components/weatheralerts)
-  * [View Issues/Feature Requests](https://github.com/custom-components/weatheralerts/issues)
-  * [Report an Issue/Feature Request](https://github.com/custom-components/weatheralerts/issues/new/choose)
+  * [GitHub Repository](https://github.com/ddeatrich/weatheralerts)
+  * [View Issues/Feature Requests](https://github.com/ddeatrich/weatheralerts/issues)
+  * [Report an Issue/Feature Request](https://github.com/ddeatrich/weatheralerts/issues/new/choose)
   * [Changelog](/CHANGELOG.md)
 
 
@@ -29,14 +29,14 @@ Add `packages: !include_dir_named packages` to the `homeassistant:` section, cre
 
 
 ## YAML Package Installation
-Sample yaml packages are included in the repository packages directory [https://github.com/custom-components/weatheralerts/packages/](https://github.com/custom-components/weatheralerts/tree/master/packages). The yaml packages currently available:
+Sample yaml packages are included in the repository packages directory [https://github.com/custom-components/weatheralerts/packages/](https://github.com/ddeatrich/weatheralerts/tree/master/packages). The yaml packages currently available:
 * **weatheralerts.yaml** - includes the main weatheralerts sensor platform configuration. If you already have the weatheralerts platform configured elsewhere, you won't need this.
 * **weatheralerts_1.yaml** - rename your first weatheralerts platform sensor entity ID to `sensor.weatheralerts_1` to use this yaml package which includes template sensors for up to 5 active alerts and a script and automations to handle UI notifications.
 * **weatheralerts_2.yaml** - rename your second weatheralerts platform sensor entity ID to `sensor.weatheralerts_2` to use this yaml package which includes template sensors for up to 5 active alerts and a script and automations to handle UI notifications.
 
 The yaml packages have some documentation included in them.
 
-The weatheralerts_1.yaml and weatheralerts_2.yaml packages will eventually be deprecated, or greatly simplified.
+The weatheralerts_1.yaml package is the main package that needs to be set up inside your "packages" folder in home assistant.
 
 
 ## Troubleshooting
