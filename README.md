@@ -41,14 +41,14 @@ Check the **Breaking Changes** section of this README to see if you need to manu
 
 # Links
 
-  * [Detailed Instructions](https://github.com/custom-components/weatheralerts/blob/master/documentation/DOCUMENTATION.md)
-  * [Troubleshooting](https://github.com/custom-components/weatheralerts/blob/master/documentation/TROUBLESHOOTING.md)
-  * [YAML Package Info](https://github.com/custom-components/weatheralerts/blob/master/documentation/YAML_PACKAGES_DOCS.md)
-  * [Lovelace UI Examples](https://github.com/custom-components/weatheralerts/blob/master/documentation/LOVELACE_EXAMPLES.md)
-  * [GitHub Repository](https://github.com/custom-components/weatheralerts)
-  * [View Issues/Feature Requests](https://github.com/custom-components/weatheralerts/issues)
-  * [Report an Issue/Feature Request](https://github.com/custom-components/weatheralerts/issues/new/choose)
-  * [Changelog](https://github.com/custom-components/weatheralerts/blob/master/CHANGELOG.md)
+  * [Detailed Instructions](https://github.com/ddeatrich/weatheralerts/blob/master/documentation/DOCUMENTATION.md)
+  * [Troubleshooting](https://github.com/ddeatrich/weatheralerts/blob/master/documentation/TROUBLESHOOTING.md)
+  * [YAML Package Info](https://github.com/ddeatrich/weatheralerts/blob/master/documentation/YAML_PACKAGES_DOCS.md)
+  * [Lovelace UI Examples](https://github.com/ddeatrich/weatheralerts/blob/master/documentation/LOVELACE_EXAMPLES.md)
+  * [GitHub Repository](https://github.com/ddeatrich/weatheralerts)
+  * [View Issues/Feature Requests](https://github.com/ddeatrich/weatheralerts/issues)
+  * [Report an Issue/Feature Request](https://github.com/ddeatrich/weatheralerts/issues/new/choose)
+  * [Changelog](https://github.com/ddeatrich/weatheralerts/blob/master/CHANGELOG.md)
 
 
 
