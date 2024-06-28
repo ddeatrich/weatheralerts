@@ -68,8 +68,7 @@ sensor:
 
 ![Sample overview](/sensor.png)
 
-The main *weatheralerts* sensor will be given the name of your zone or county and can be changed via the Home Assistant Settings menu. Click the into the *Settings* menu in the web UI, click the *Devices & Services* option on the *Settings* menu, and then select *Entities* option from the top horizontal menu. Then, use the search to search 
-box to search for your county name and you should be able to find the new sensor for the alerts.
+The main *weatheralerts* sensor will be given the name "sensor.weatheralerts_1". Do not change this.
 
 This main sensor state will be the number of alerts that are currently active, or it will be set to `unavailable` if *weatheralerts* is unable to update the sensor due to problems with the weather.gov API server. Due to the possiblity of the state being `unavailable`, you need to be careful when using it as a trigger for automations. Additional conditions may need to be applied to automations to prevent unwanted re-triggering.
 
