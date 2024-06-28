@@ -4,9 +4,9 @@
   * [Troubleshooting](TROUBLESHOOTING.md)
   * [YAML Package Info](YAML_PACKAGES_DOCS.md)
   * **Lovelace UI Examples**
-  * [GitHub Repository](https://github.com/custom-components/weatheralerts)
-  * [View Issues/Feature Requests](https://github.com/custom-components/weatheralerts/issues)
-  * [Report an Issue/Feature Request](https://github.com/custom-components/weatheralerts/issues/new/choose)
+  * [GitHub Repository](https://github.com/ddeatrich/weatheralerts)
+  * [View Issues/Feature Requests](https://github.com/ddeatrich/weatheralerts/issues)
+  * [Report an Issue/Feature Request](https://github.com/ddeatrich/weatheralerts/issues/new/choose)
   * [Changelog](/CHANGELOG.md)
 
 
